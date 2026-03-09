@@ -148,6 +148,69 @@ class Program
     static void EditBookYearCategory() { Console.WriteLine("Editando el año o categoría del libro..."); }
     static void DeleteBook() { Console.WriteLine("Validar: Si el libro está prestado no se puede eliminar");Console.ReadKey(); }
 
+     static void ShowUserMenu()
+    {
+        bool back = false;
+        while (!back)
+        {
+            Console.Clear();
+            Console.WriteLine("=== MENU DE USUARIOS ===");
+            Console.WriteLine("2.1 Registrar Usuario");
+            Console.WriteLine("2.2 Listar Usuarios");
+            Console.WriteLine("2.3 Ver detalle (por ID/documento)");
+            Console.WriteLine("2.4 Actualizar Usuario");
+            Console.WriteLine("2.5 Eliminar Usuario");
+            Console.WriteLine("0. Volver al menú principal");
+
+            string option = Console.ReadLine().Trim();
+            switch (option)
+            {
+                case "2.1": RegisterUser(); break;
+                case "2.2": ListUser(); break;
+                case "2.3": ViewUserDetail(); break;
+                case "2.4": UpdateUserMenu(); break;
+                case "2.5": DeleteUser(); break;
+                case "0": back = true; break;
+                default: ShowErrorMessage(); break;
+            }
+        }
+    }
+
+    static void RegisterUser() { Console.WriteLine("Registrando usuario..."); Console.ReadKey(); }
+    static void ListUser() { Console.WriteLine("Mostrando listado de usuarios..."); Console.ReadKey(); }
+    static void ViewUserDetail() { Console.WriteLine("Mostrando detalles por ID..."); Console.ReadKey(); }
+
+    static void UpdateUserMenu()
+    {
+        bool back = false;
+        while (!back)
+        {
+            Console.Clear();
+            Console.WriteLine("=== ACTUALIZAR USUARIO ===");
+            Console.WriteLine("2.4.1 Editar Nombre");
+            Console.WriteLine("2.4.2 Editar contacto");
+            Console.WriteLine("2.4.3 Activar/desactivar");
+            Console.WriteLine("0. Volver al menú de Usuarios");
+
+            string opt = Console.ReadLine().Trim();
+            switch (opt)
+            {
+                case "2.4.1": EditUserName(); break;
+                case "2.4.2": EditUserContact(); break;
+                case "2.4.3": ToggleUserActiveStatus(); break;
+                case "0": back = true; break;
+                default: ShowErrorMessage(); break;
+            }
+
+            if (!back) Console.ReadKey();
+        }
+    }
+
+    static void EditUserName() { Console.WriteLine("Editando el nombre del usuario..."); }
+    static void EditUserContact() { Console.WriteLine("Editando el contacto del usuario..."); }
+    static void ToggleUserActiveStatus() { Console.WriteLine("Verificando estado del usuario..."); }
+    static void DeleteUser() { Console.WriteLine("Validar: No permitir si tiene préstamos activos");Console.ReadKey();}
+
 
 
         
