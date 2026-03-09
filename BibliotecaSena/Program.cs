@@ -369,6 +369,30 @@ class Program
         else Console.WriteLine("\n[SISTEMA] Operacion cancelada.");
         Console.ReadKey();
     }
+     static bool ConfirmResetData()
+    {
+        Console.Write("\n¿Confirmar reinicio total? (S/N): ");
+        return Console.ReadLine()?.ToUpper() == "S";
+    }
+
+    static void ConfirmExitAndSave()
+    {
+        Console.Write("\n¿Guardar antes de salir? (S/N): ");
+        if (Console.ReadLine()?.ToUpper() == "S") SaveData();
+        Console.WriteLine("Saliendo...");
+        Environment.Exit(0);
+    }
+    static void ShowErrorMessage()
+    {
+        Console.WriteLine("\nOpción no válida. Intente de nuevo.");
+        Console.ReadKey();
+    }
+    
+
+   
+
+
+}
 
         
-}
+
