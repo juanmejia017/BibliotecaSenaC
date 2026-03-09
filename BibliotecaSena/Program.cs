@@ -275,6 +275,68 @@ class Program
     static void ViewLoanDetail() { Console.WriteLine("Consultando detalles por ID..."); }
     static void RegisterReturn() { Console.WriteLine("Devolución registrada. ¡Libro disponible!"); }
     static void DeleteLoan() { Console.WriteLine("Reglas sugeridas..."); }
+     static void ShowSearchReportsMenu()
+    {
+        bool back = false;
+        while (!back)
+        {
+            Console.Clear();
+            Console.WriteLine("=== MENU DE BÚSQUEDAS Y REPORTES ===");
+            Console.WriteLine("4.1 Buscar Libro");
+            Console.WriteLine("4.2 Buscar Usuario");
+            Console.WriteLine("4.3 Reportes");
+            Console.WriteLine("0. Volver");
+
+            string option = Console.ReadLine().Trim();
+            switch (option)
+            {
+                case "4.1": SearchBook(); break;
+                case "4.2": SearchUser(); break;
+                case "4.3": ReportsMenu(); break;
+                case "0": back = true; break;
+                default: ShowErrorMessage(); break;
+            }
+
+            if (!back) Console.ReadKey();
+        }
+    }
+
+    static void SearchBook() { Console.WriteLine("Buscando libro por título/ID/categoría/autor..."); }
+    static void SearchUser() { Console.WriteLine("Buscando usuario por nombre/ID..."); }
+
+    static void ReportsMenu()
+    {
+        bool back = false;
+        while (!back)
+        {
+            Console.Clear();
+            Console.WriteLine("=== REPORTES ===");
+            Console.WriteLine("1. Por Usuario");
+            Console.WriteLine("2. Por Libro");
+            Console.WriteLine("3. Vencidos");
+            Console.WriteLine("4. Resumen");
+            Console.WriteLine("0. Volver al menú de Búsquedas y Reportes");
+
+            string opt = Console.ReadLine().Trim();
+            switch (opt)
+            {
+                case "1": ReportByUser(); break;
+                case "2": ReportByBook(); break;
+                case "3": ReportOverDue(); break;
+                case "4": ReportSummary(); break;
+                case "0": back = true; break;
+                default: ShowErrorMessage(); break;
+            }
+
+            if (!back) Console.ReadKey();
+        }
+    }
+
+    static void ReportByUser() { Console.WriteLine("Generando reporte por usuario..."); }
+    static void ReportByBook() { Console.WriteLine("Generando reporte por libro..."); }
+    static void ReportOverDue() { Console.WriteLine("Generando reportes de libros vencidos..."); }
+    static void ReportSummary() { Console.WriteLine("Generando resumen de la biblioteca..."); 
+    }
 
         
 }
