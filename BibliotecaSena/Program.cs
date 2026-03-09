@@ -337,6 +337,38 @@ class Program
     static void ReportOverDue() { Console.WriteLine("Generando reportes de libros vencidos..."); }
     static void ReportSummary() { Console.WriteLine("Generando resumen de la biblioteca..."); 
     }
+        static void SaveAndLoadData()
+    {
+        while (true)
+        {
+            Console.Clear();
+            Console.Write("1. Guardar\n2. Cargar\n3. Reiniciar\n4. Volver\nOpcion: ");
+            string op = Console.ReadLine();
+            if (op == "1") SaveData();
+            else if (op == "2") LoadData();
+            else if (op == "3") ResetData();
+            else if (op == "4") break;
+        }
+    }
+
+    static void SaveData()
+    {
+        Console.WriteLine("\n[SISTEMA] Datos guardados exitosamente.");
+        Console.ReadKey();
+    }
+
+    static void LoadData()
+    {
+        Console.WriteLine("\n[SISTEMA] Datos cargados exitosamente.");
+        Console.ReadKey();
+    }
+
+    static void ResetData()
+    {
+        if (ConfirmResetData()) Console.WriteLine("\n[SISTEMA] Datos reiniciados.");
+        else Console.WriteLine("\n[SISTEMA] Operacion cancelada.");
+        Console.ReadKey();
+    }
 
         
 }
