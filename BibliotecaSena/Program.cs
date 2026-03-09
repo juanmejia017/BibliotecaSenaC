@@ -212,6 +212,69 @@ class Program
     static void DeleteUser() { Console.WriteLine("Validar: No permitir si tiene préstamos activos");Console.ReadKey();}
 
 
+    static void ShowLoansMenu()
+    {
+        bool back = false;
+        while (!back)
+        {
+            Console.Clear();
+            Console.WriteLine("=== MENU DE PRÉSTAMOS ===");
+            Console.WriteLine("3.1 Crear préstamo");
+            Console.WriteLine("3.2 Listar préstamos");
+            Console.WriteLine("3.3 Ver detalle");
+            Console.WriteLine("3.4 Registrar devolución");
+            Console.WriteLine("3.5 Eliminar préstamo");
+            Console.WriteLine("0. Volver");
+
+            string option = Console.ReadLine().Trim();
+            switch (option)
+            {
+                case "3.1": CreateLoan(); break;
+                case "3.2": ListLoanMenu(); break;
+                case "3.3": ViewLoanDetail(); break;
+                case "3.4": RegisterReturn(); break;
+                case "3.5": DeleteLoan(); break;
+                case "0": back = true; break;
+                default: ShowErrorMessage(); break;
+            }
+
+            if (!back) Console.ReadKey();
+        }
+    }
+
+    static void CreateLoan() { Console.WriteLine("Creando préstamo..."); }
+    static void ListLoanMenu()
+    {
+        bool back = false;
+        while (!back)
+        {
+            Console.Clear();
+            Console.WriteLine("=== LISTAR PRÉSTAMOS ===");
+            Console.WriteLine("3.2.1 Todos");
+            Console.WriteLine("3.2.2 Activos");
+            Console.WriteLine("3.2.3 Cerrados");
+            Console.WriteLine("0. Volver al menú de Préstamos");
+
+            string opt = Console.ReadLine().Trim();
+            switch (opt)
+            {
+                case "3.2.1": ListLoanAll(); break;
+                case "3.2.2": ListLoanActive(); break;
+                case "3.2.3": ListLoanClosed(); break;
+                case "0": back = true; break;
+                default: ShowErrorMessage(); break;
+            }
+
+            if (!back) Console.ReadKey();
+        }
+    }
+
+    static void ListLoanAll() { Console.WriteLine("Listando todos los préstamos..."); }
+    static void ListLoanActive() { Console.WriteLine("Listando préstamos activos..."); }
+    static void ListLoanClosed() { Console.WriteLine("Listando préstamos cerrados..."); }
+    static void ViewLoanDetail() { Console.WriteLine("Consultando detalles por ID..."); }
+    static void RegisterReturn() { Console.WriteLine("Devolución registrada. ¡Libro disponible!"); }
+    static void DeleteLoan() { Console.WriteLine("Reglas sugeridas..."); }
 
         
 }
