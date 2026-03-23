@@ -1,13 +1,52 @@
 ﻿using System;
+<<<<<<< HEAD
 using Models;
+=======
+using models;
+>>>>>>> feature/models-testing-objetos
 
 class Program
 {
     static void Main(string[] args)
     {
         Console.WriteLine("SISTEMA DE GESTION DE BIBLIOTECA");
-    }
+    
           ShowMainMenu();
+          TestModels();
+    }
+       TestModels();     // Pruebas de la actividad
+        ShowMainMenu();   // Tu menú
+    }
+
+    static void TestModels()
+    {
+        Console.WriteLine("\n=== PRUEBA DE MODELOS ===\n");
+
+        Libro libro1 = new Libro(1, "Cien años de soledad", "Gabriel García Márquez", 1967, "Novela");
+        Libro libro2 = new Libro(2, "1984", "George Orwell", 1949, "Distopía");
+
+        Usuario user1 = new Usuario(1, "Juan", "123", "juan@email.com");
+        Usuario user2 = new Usuario(2, "Ana", "456", "ana@email.com");
+
+        Prestamo prestamo = new Prestamo(1, libro1, user1, DateTime.Now.AddDays(-10));
+
+        Console.WriteLine("=== LIBROS ===");
+        Console.WriteLine(libro1.ResumenCorto());
+        Console.WriteLine(libro1.DetalleCompleto());
+
+        Console.WriteLine("\n=== USUARIOS ===");
+        Console.WriteLine(user1.ResumenCorto());
+        Console.WriteLine(user1.DetalleCompleto());
+
+        Console.WriteLine("\n=== PRÉSTAMO ===");
+        Console.WriteLine(prestamo.DetalleCompleto());
+        Console.WriteLine($"¿Está vencido?: {prestamo.EstaVencido()}");
+        Console.WriteLine($"Días transcurridos: {prestamo.DiasTranscurridos()}");
+
+        Console.WriteLine("\nPresione una tecla para continuar...");
+        Console.ReadKey();
+    }
+
     
    static void ShowMainMenu()
     {
