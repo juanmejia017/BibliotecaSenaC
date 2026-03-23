@@ -1,9 +1,9 @@
 ﻿using System;
-<<<<<<< HEAD
+
 using Models;
 =======
 using models;
->>>>>>> feature/models-testing-objetos
+
 
 class Program
 {
@@ -14,8 +14,8 @@ class Program
           ShowMainMenu();
           TestModels();
     }
-       TestModels();     // Pruebas de la actividad
-        ShowMainMenu();   // Tu menú
+       TestModels();     
+        ShowMainMenu();   
     }
 
     static void TestModels()
