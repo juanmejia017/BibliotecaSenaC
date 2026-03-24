@@ -1,15 +1,10 @@
-<<<<<<< HEAD
 ﻿using System;
-=======
-﻿
-    using System;
-using System.Collections.Generic; 
->>>>>>> develop
+using System.Collections.Generic; // Agregado para las listas
 using Models;
 
 class Program
 {
-    
+    // Listas globales para que tus métodos puedan acceder a los datos
     static List<Libro> libros = new List<Libro>();
     static List<Usuario> usuarios = new List<Usuario>();
     static List<Prestamo> prestamos = new List<Prestamo>();
@@ -19,16 +14,6 @@ class Program
         // Cargamos los datos de prueba requeridos por la guía
         TestModels();
         Console.WriteLine("SISTEMA DE GESTION DE BIBLIOTECA");
-<<<<<<< HEAD
-
-        Console.ReadKey();
-
-        // Primero prueba modelos
-        TestModels();
-
-        // Luego menú principal
-=======
->>>>>>> develop
         ShowMainMenu();
     }
 
@@ -49,7 +34,6 @@ class Program
     static void ShowMainMenu()
     {
         bool exit = false;
-
         while (!exit)
         {
             Console.Clear();
@@ -72,8 +56,6 @@ class Program
                 case "4": ShowSearchReportsMenu(); break;
                 case "5": SaveAndLoadData(); break;
                 case "6": ConfirmExitAndSave(); break;
-<<<<<<< HEAD
-=======
                 default: ShowErrorMessage(); break;
             }
         }
@@ -102,16 +84,11 @@ class Program
                 case "1.4": UpdateBookMenu(); break;
                 case "1.5": DeleteBook(); break;
                 case "0": back = true; break;
->>>>>>> develop
                 default: ShowErrorMessage(); break;
             }
         }
     }
 
-<<<<<<< HEAD
-    // 🔽 El resto de tus métodos siguen igual (NO había errores ahí)
-}
-=======
     static void RegisterBook()
     {
         Console.WriteLine("Registrando un Nuevo Libro...");
@@ -495,7 +472,7 @@ class Program
 
 
 
->>>>>>> develop
+
 
         
 
